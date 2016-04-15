@@ -10,11 +10,11 @@ class Musician(object):
 
 class Bassist(Musician):
     def __init__(self):
-        super().__init__(["Twang", "Thrumb", "Bling"])
+        super(Bassist, self).__init__(["Twang", "Thrumb", "Bling"])
 
 class Guitarist(Musician):
     def __init__(self):
-        super().__init__(["Boink", "Bow", "Boom"])
+        super(Guitarist, self).__init__(["Boink", "Bow", "Boom"])
     
     def tune(self):
         print("Be with you in a moment")
@@ -22,13 +22,26 @@ class Guitarist(Musician):
 
 class Drummer(Musician):
     def __init__(self):
-        super().__init__(["Thump", "Dun", "Spang"])
+        super(Drummer, self).__init__(["Thump", "Dun", "Spang"])
     
     def countdown(self):
         for i in range(1,5):
             print(i)
 
+class Vocalist(Musician):
+    def __init__(self):
+        super(Vocalist, self).__init__(["YEAHHH", "YOOOO", "WOOOO"])
 
-mark = Drummer()
-mark.solo(6)
-print(mark.solo)
+class Band(object):
+    def __init__(self):
+        self.members = []
+    def hire(self, member):
+        self.members.append(member)
+        for member in self.members:
+            print(member.name)
+    def fire(self, member):
+        self.members.remove(member)
+        for member in self.members:
+            print(member.name)
+    def bandplay(self, members):
+        
