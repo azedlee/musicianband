@@ -55,7 +55,7 @@ class Band(object):
             else:
                 pass
         for conduct in self.myBand:
-            conduct.solo(3)
+            conduct.solo(len(conduct.sounds))
 
 amazing = Band()
 mark = Drummer("mark")
